@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+
+metadata:
+  name: helloworld-route
+
+spec:
+  to:
+    kind: Service
+    name: helloworld-chart
+
+  port:
+    targetPort: http
