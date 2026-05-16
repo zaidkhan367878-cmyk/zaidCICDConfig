@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 
 metadata:
-  name: helloworld-route
+  name: {{ include "helloworld-chart.fullname" . }}-route
 
 spec:
   to:
     kind: Service
-    name: helloworld
+    name: {{ include "helloworld-chart.fullname" . }}
 
   port:
     targetPort: http
